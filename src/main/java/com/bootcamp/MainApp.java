@@ -7,10 +7,10 @@ public class MainApp {
     public static void main(String[] args) {
         ApplicationContext container = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Shape circle = container.getBean("circle", Shape.class);
+        Shape circle = container.getBean("Ciircle", Shape.class);
         circle.draw();
 
-        Shape square = container.getBean("square", Shape.class);
+        Shape square = container.getBean("SQuare", Shape.class);
         square.draw();
     }
 }
