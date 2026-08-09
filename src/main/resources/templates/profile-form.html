@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile Form</title>
+</head>
+<body style="padding: 30px; font-family: sans-serif; background-color: #fafafa;">
+    <div style="background-color: white; padding: 20px; border: 1px solid #ccc; width: 400px; margin: 0 auto; border-radius: 5px;">
+        <h2 style="color: navy; text-align: center;">User Profile Form</h2>
+        <br>
+        <form th:action="@{/submitProfile}" th:object="${user}" method="post">
+            <label style="display: inline-block; width: 120px;">First Name:</label>
+            <input type="text" th:field="*{firstName}" style="width: 220px; margin-bottom: 5px;">
+            <br>
+            <label style="display: inline-block; width: 120px;">Last Name:</label>
+            <input type="text" th:field="*{lastName}" style="width: 220px; margin-bottom: 5px;">
+            <br>
+            <label style="display: inline-block; width: 120px;">Email:</label>
+            <input type="text" th:field="*{email}" style="width: 220px; margin-bottom: 5px;">
+            <br>
+            <label style="display: inline-block; width: 120px;">Date of Birth:</label>
+            <input type="date" th:field="*{dateOfBirth}" style="width: 220px; margin-bottom: 5px;">
+            <br>
+            <label style="display: inline-block; width: 120px;">City:</label>
+            <select th:field="*{city}" style="width: 226px; margin-bottom: 10px;">
+                <option value="Cairo">Cairo</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Giza">Giza</option>
+                <option value="Mansoura">Mansoura</option>
+            </select>
+            <br><br>
+            <button type="submit" style="background-color: navy; color: white; border: none; padding: 8px 15px; cursor: pointer; width: 100%;">Submit Profile</button>
+        </form>
+    </div>
+</body>
+</html>
