@@ -8,15 +8,16 @@
            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:application.properties"/>
+    <context:component-scan base-package="com.bootcamp"/>
 
     <bean id="draw2d" class="com.bootcamp.Draw2d"/>
     <bean id="draw3d" class="com.bootcamp.Draw3d"/>
 
-    <bean id="myCircle" class="com.bootcamp.Circle">
+    <bean id="myCircle" class="com.bootcamp.Circle" scope="singleton">
         <constructor-arg ref="draw2d"/>
     </bean>
 
-    <bean id="mySquare" class="com.bootcamp.Square">
+    <bean id="mySquare" class="com.bootcamp.Square" scope="prototype">
         <property name="myDraw" ref="draw2d"/>
     </bean>
 
@@ -33,5 +34,7 @@
     <bean id="tempPlane" class="com.bootcamp.Plane">
         <property name="dbOp" ref="dbOp"/>
     </bean>
+
+    <bean id="dbOps" class="com.bootcamp.DatabaseOperations" init-method="connectToDatabase" destroy-method="disconnectFromDatabase"/>
 
 </beans>
