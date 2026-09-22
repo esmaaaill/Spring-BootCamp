@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission Successful</title>
+</head>
+<body style="padding: 30px; font-family: sans-serif; background-color: #fafafa; text-align: center;">
+    <div style="background-color: lightgreen; padding: 15px; width: 450px; margin: 0 auto; border: 1px solid green; border-radius: 5px;">
+        <h2 style="color: darkgreen; margin: 0;">Data submitted successfully</h2>
+    </div>
+    <br><br>
+    <div style="background-color: white; padding: 20px; border: 1px solid #ccc; width: 450px; margin: 0 auto; border-radius: 5px; text-align: left;">
+        <p style="margin-bottom: 8px;"><strong>First Name:</strong> <span th:text="${user.firstName}"></span></p>
+        <p style="margin-bottom: 8px;"><strong>Last Name:</strong> <span th:text="${user.lastName}"></span></p>
+        <p style="margin-bottom: 8px;"><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+        <p style="margin-bottom: 8px;"><strong>Date of Birth:</strong> <span th:text="${user.dateOfBirth}"></span></p>
+        <p style="margin-bottom: 8px;"><strong>City:</strong> <span th:text="${user.city}"></span></p>
+    </div>
+</body>
+</html>
