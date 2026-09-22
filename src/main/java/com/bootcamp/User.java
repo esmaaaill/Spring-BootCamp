@@ -1,32 +1,26 @@
 package com.bootcamp;
 
-import java.time.LocalDate;
-import org.springframework.format.annotation.DateTimeFormat;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
+@PasswordMatch
 public class User {
-    private String firstName;
-    private String lastName;
+    @NotBlank(message = "this field cannot empty or null")
+    private String usrname;
+
+    @NotBlank(message = "please enter a valid email address")
+    @Email(message = "please enter a valid email address")
     private String email;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateOfBirth;
+    private String passwrod;
+    private String confirmPassword;
 
-    private String city;
-
-    public String getFirstName() {
-        return firstName;
+    public String getUsrname() {
+        return usrname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUsrname(String usrname) {
+        this.usrname = usrname;
     }
 
     public String getEmail() {
@@ -37,19 +31,19 @@ public class User {
         this.email = email;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public String getPasswrod() {
+        return passwrod;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setPasswrod(String passwrod) {
+        this.passwrod = passwrod;
     }
 
-    public String getCity() {
-        return city;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 }
